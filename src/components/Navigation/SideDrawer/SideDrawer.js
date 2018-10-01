@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './SideDrawer.css';
 import Backdrop from '../../UI/Backdrop/Backdrop';
-import Wrapper from '../../../hoc/Wrapper';
+import Wrapper from '../../../hoc/Wrapper/Wrapper';
 
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
