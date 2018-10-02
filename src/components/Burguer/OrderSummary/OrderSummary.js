@@ -30,7 +30,7 @@ class OrderSummary extends Component {
                     clicked={this.props.canceled}
                     btnType='Danger'>CANCEL</Button>
                 <Button
-                    clicked={this.props.canceled}
+                    clicked={this.props.continued}
                     btnType='Success'>CONTINUE</Button>
             </Wrapper>
         );
