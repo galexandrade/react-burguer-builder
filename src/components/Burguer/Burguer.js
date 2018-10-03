@@ -1,8 +1,11 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
+
 import classes from './Burguer.css';
 import BurguerIngredient from './BurguerIngredint/BurguerIngredient';
 
 const burguer = (props) => {
+    console.log(props);
 
     //Get an array of an object
     let ingredients = Object.keys(props.ingredients)
@@ -28,4 +31,4 @@ const burguer = (props) => {
     );
 };
 
-export default burguer;
+export default withRouter(burguer);

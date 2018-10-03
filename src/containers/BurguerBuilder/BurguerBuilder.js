@@ -102,6 +102,18 @@ class BurguerBuilder extends Component{
     }
 
     purchaseContinueHandler = () => {
+        const queryParams = [];
+        for(let i in this.state.ingredients){
+            queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
+        }
+        const queryString = queryParams.join('&');
+
+        this.props.history.push({
+            pathname: '/checkout',
+            search: '?' + queryString
+        });
+
+        /*
         this.setState({loading: true});
 
         const order = {
@@ -133,7 +145,8 @@ class BurguerBuilder extends Component{
                     loading: false,
                     purchasing: false
                 });
-            })
+            });
+        */
     }
 
     render(){
