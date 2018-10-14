@@ -7,7 +7,6 @@ import Spinner from '../../../components/UI/Spinner/Spinner';
 import Input from '../../../components/UI/Input/Input';
 import withErrorHandler from '../../../hoc/WithErrorHandler/WithErrorHandler';
 import * as actions from '../../../store/actions';
-import { stat } from 'fs';
 
 class ContactData extends Component{
     state = {
@@ -108,7 +107,8 @@ class ContactData extends Component{
         const order = {
             ingredients: this.props.ings,
             price: this.props.price,
-            orderData: formData
+            orderData: formData,
+            userId: this.props.userId
         }
 
         this.props.onOrderBurguer(order, this.props.token);
@@ -213,7 +213,8 @@ const mapStateToProps = state => {
         ings: state.burguerBuilder.ingredients,
         price: state.burguerBuilder.totalPrice,
         loading: state.order.loading,
-        token: state.auth.idToken
+        token: state.auth.idToken,
+        userId: state.auth.userId
     };
 }
 
