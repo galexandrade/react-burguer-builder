@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from '../../axios-order';
 
-import * as burguerBuilderActions from '../../store/actions';
+import * as actions from '../../store/actions';
 
 import Wrapper from '../../hoc/Wrapper/Wrapper';
 import Burguer from '../../components/Burguer/Burguer';
@@ -46,23 +46,8 @@ class BurguerBuilder extends Component{
     }
 
     purchaseContinueHandler = () => {
-        /*
-        const queryParams = [];
-        for(let i in this.props.ings){
-            queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.props.ings[i]));
-        }
-
-        queryParams.push('price=' + this.state.totalPrice);
-
-        const queryString = queryParams.join('&');
-
-        this.props.history.push({
-            pathname: '/checkout',
-            search: '?' + queryString
-        });
-        */
-
-       this.props.history.push('/checkout');
+        this.props.onInitPurchase();
+        this.props.history.push('/checkout');
     }
 
     render(){
@@ -111,17 +96,18 @@ class BurguerBuilder extends Component{
 
 const mapStateToProps = state => {
     return {
-        ings: state.ingredients,
-        price: state.totalPrice,
-        error: state.error
+        ings: state.burguerBuilder.ingredients,
+        price: state.burguerBuilder.totalPrice,
+        error: state.burguerBuilder.error
     };
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        onIngredientAdded: (ingName) => dispatch(burguerBuilderActions.addIngredient(ingName)),
-        onIngredientRemoved: (ingName) => dispatch(burguerBuilderActions.removeIngredient(ingName)),
-        onInitIngredients: () => dispatch(burguerBuilderActions.initIngredients())
+        onIngredientAdded: (ingName) => dispatch(actions.addIngredient(ingName)),
+        onIngredientRemoved: (ingName) => dispatch(actions.removeIngredient(ingName)),
+        onInitIngredients: () => dispatch(actions.initIngredients()),
+        onInitPurchase: () => dispatch(actions.purchaseInit())
     }
 }
 
