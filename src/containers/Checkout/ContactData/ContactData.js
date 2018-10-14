@@ -129,11 +129,8 @@ class ContactData extends Component{
         let formIsValid = true;
 
         for(let inputIdentifier in updatedOrderForm){
-            console.log(inputIdentifier, updatedOrderForm[inputIdentifier].valid)
             formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
         }
-
-        console.log(formIsValid);
 
         this.setState({
             orderForm: updatedOrderForm,

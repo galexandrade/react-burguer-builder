@@ -15,7 +15,6 @@ class Checkout extends Component {
     }
 
     render(){
-        console.log(this.props.match.path + '/contact-data');
         let summary = <Redirect to="/" />;
 
         if(this.props.ings){

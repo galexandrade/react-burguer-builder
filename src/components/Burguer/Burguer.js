@@ -5,8 +5,6 @@ import classes from './Burguer.css';
 import BurguerIngredient from './BurguerIngredint/BurguerIngredient';
 
 const burguer = (props) => {
-    console.log(props);
-
     //Get an array of an object
     let ingredients = Object.keys(props.ingredients)
         .map(igKey => {
@@ -20,7 +18,7 @@ const burguer = (props) => {
 
     if(ingredients.length === 0){
         ingredients = <p>Please start adding ingredients!</p>;
-    }    
+    }
 
     return (
         <div className={classes.Burguer}>

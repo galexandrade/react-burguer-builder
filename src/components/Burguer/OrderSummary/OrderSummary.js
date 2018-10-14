@@ -3,10 +3,6 @@ import Wrapper from '../../../hoc/Wrapper/Wrapper';
 import Button from '../../UI/Button/Button';
 
 class OrderSummary extends Component {
-    componentWillUpdate(){
-        console.log('[OrderSummary] Will update');
-    }
-
     render(){
         const ingredientSummary = Object.keys(this.props.ingredients)
             .map(igKey => {
