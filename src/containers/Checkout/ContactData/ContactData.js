@@ -18,7 +18,7 @@ class ContactData extends Component{
                     type: 'text',
                     placeholder: 'Your name'
                 },
-                value: 'Alex P. Andrade',
+                value: '',
                 validation: {
                     required: true
                 },
@@ -31,7 +31,7 @@ class ContactData extends Component{
                     type: 'text',
                     placeholder: 'Street'
                 },
-                value: 'Luis Bachtold',
+                value: '',
                 validation: {
                     required: true
                 },
@@ -44,7 +44,7 @@ class ContactData extends Component{
                     type: 'text',
                     placeholder: 'Zip code'
                 },
-                value: '8908908-999',
+                value: '',
                 validation: {
                     required: true,
                     minLength: 5,
@@ -59,7 +59,7 @@ class ContactData extends Component{
                     type: 'text',
                     placeholder: 'Your country'
                 },
-                value: 'Brazil',
+                value: '',
                 validation: {
                     required: true
                 },
@@ -72,7 +72,7 @@ class ContactData extends Component{
                     type: 'email',
                     placeholder: 'Your email'
                 },
-                value: 'g.alex.andrade@gamil.com',
+                value: '',
                 validation: {
                     required: true
                 },
