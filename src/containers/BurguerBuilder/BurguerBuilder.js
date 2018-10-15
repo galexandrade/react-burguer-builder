@@ -14,8 +14,8 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import WithErrorHandler from '../../hoc/WithErrorHandler/WithErrorHandler';
 
 
-
-class BurguerBuilder extends Component{
+//Exporting to be accessible in the Test
+export class BurguerBuilder extends Component{
     state = {
         //purchasable: false,
         purchasing: false
